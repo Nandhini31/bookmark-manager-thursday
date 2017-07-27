@@ -4,15 +4,12 @@ require 'dm-postgres-adapter'
 
 class Link
 
-include DataMapper::Resource
+  include DataMapper::Resource
 
-property :id,    Serial
-property :title, String
-property :url,   String
+  has n, :tags, through: Resource
 
-end
+  property :id,    Serial
+  property :title, String
+  property :url,   String
 
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/bookmark_manager_development")
-#DataMapper.setup(:default, "postgres://localhost/bookmark_manager_development")
-DataMapper.finalize
-DataMapper.auto_upgrade!
+  end

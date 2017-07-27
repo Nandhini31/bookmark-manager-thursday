@@ -10,6 +10,7 @@ require 'data_mapper'
 require 'dm-postgres-adapter'
 require_relative '../app/app.rb'
 
+
 Capybara.app = BookmarkManager
 
 RSpec.configure do |config|
