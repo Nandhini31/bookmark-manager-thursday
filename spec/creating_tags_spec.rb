@@ -4,7 +4,7 @@ feature 'creating links' do
     visit '/links/new'
     fill_in :url, with: 'www.google.com'
     fill_in :title, with: 'Google'
-    fill_in :tags, with: 'search_engine'
+    fill_in :tags, with: 'search_engine Google'
     click_button 'submit'
     # within 'ul#links' do
     expect(page).to have_content('search_engine')
