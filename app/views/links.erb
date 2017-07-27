@@ -4,13 +4,18 @@
   <% @links.each do |link| %>
 
   <li>
-    Title: <%= link.title %>
-    URL: <%= link.url %>
+    Title: <%= link.title %>,
+    URL: <b><%= link.url %></b>,
     <% link.tags.each do |tag| %>
-      TAG: <%=tag.name %>
+      Tag: <%=tag.name %>
   <%end%>
   </li>
   <% end %>
 </ul>
 
 <a href = '/links/new'> Add New link </a>
+<br></br>
+<form action = "/bubbles" method = "POST" >
+  Search links by tag: <input type = 'text', name = 'search'>
+  <input type =  'submit', value = 'Submit'>
+  </form>
