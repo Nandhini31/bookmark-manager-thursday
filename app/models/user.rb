@@ -12,4 +12,7 @@ class User
   property :email, String
   property :password, BCryptHash, :required => true
 
+
+  validates_format_of :email, :as => :email_address
+
   end
