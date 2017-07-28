@@ -1,8 +1,7 @@
+<h1> Welcome <%= @user %> </h1> 
 <h1>Links</h1>
-
 <ul id='links'>
   <% @links.each do |link| %>
-
   <li>
     Title: <%= link.title %>,
     URL: <b><%= link.url %></b>,
@@ -12,10 +11,9 @@
   </li>
   <% end %>
 </ul>
-
 <a href = '/links/new'> Add New link </a>
 <br></br>
 <form action = "/bubbles" method = "POST" >
   Search links by tag: <input type = 'text', name = 'search'>
   <input type =  'submit', value = 'Submit'>
-  </form>
+</form>
