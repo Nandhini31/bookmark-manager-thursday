@@ -8,7 +8,6 @@ class User
   include DataMapper::Resource
 
   property :id,    Serial
-  property :email, String, required: true
-    validates_format_of :email, :as => :email_address
+  property :email, String, required: true , unique: true
   property :password, BCryptHash, :required => true
 end

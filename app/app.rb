@@ -13,13 +13,17 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/' do
-    if params[:password] == params[:password_confirmation]
+    if User.all.map{|user| user.email}.include? params[:email]
+      session[:error] = "User already exists"
+      redirect '/'
+    elsif params[:password] == params[:password_confirmation]
       User.create(email: params[:email], password: params[:password])
       redirect '/links'
     else
       session[:error] = "Password and confirmation password do not match"
       redirect '/'
     end
+
   end
 
   get '/links' do
