@@ -10,9 +10,7 @@ class User
 
   property :id,    Serial
   property :email, String
+    validates_format_of :email, :as => :email_address
   property :password, BCryptHash, :required => true
 
-
-  validates_format_of :email, :as => :email_address
-
-  end
+end
