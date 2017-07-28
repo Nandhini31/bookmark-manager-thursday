@@ -5,11 +5,12 @@ gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'rake'
 gem 'sinatra'
-gem 'database_cleaner'
 gem 'rack'
 gem 'bcrypt'
+gem 'sinatra-flash'
 
 group :test do
+  gem 'database_cleaner'
   gem 'capybara'
   gem 'rspec'
   gem 'rubocop'
