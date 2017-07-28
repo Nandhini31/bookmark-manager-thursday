@@ -1,5 +1,4 @@
 feature 'creating links' do
-
   scenario 'I can add new tags on the new  page' do
     visit '/links/new'
     fill_in :url, with: 'www.google.com'
@@ -9,4 +8,4 @@ feature 'creating links' do
     # within 'ul#links' do
     expect(page).to have_content('search_engine')
   end
-  end
+end

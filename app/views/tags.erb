@@ -1,10 +1,9 @@
 <h1>Links with the tag: <%= @search_term %></h1>
 <ul>
   <% @links.each do |link| %>
-
   <li>
     Title: <%= link.title %>
-    URL: <b><%= link.url %></b>
+    URL: <b><a href="http://<%= link.url %>"><%= link.url %></a></b>,
   </li>
   <% end %>
 </ul>

@@ -1,7 +1,6 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
 
-
 class Link
 
   include DataMapper::Resource
@@ -12,4 +11,4 @@ class Link
   property :title, String
   property :url,   String
 
-  end
+end

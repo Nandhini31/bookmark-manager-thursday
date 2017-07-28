@@ -3,7 +3,6 @@ ENV['RACK_ENV'] ||= "development"
 require 'sinatra/base'
 require_relative 'data_mapper_setup'
 
-
 class BookmarkManager < Sinatra::Base
 
   get '/' do
@@ -14,8 +13,6 @@ class BookmarkManager < Sinatra::Base
     User.create(email: params[:email], password: params[:password])
     redirect '/links'
   end
-
-
 
   get '/links' do
     @user = User.all.last ? User.all.last.email : "User not found"
@@ -33,16 +30,13 @@ class BookmarkManager < Sinatra::Base
       link.tags << Tag.first_or_create(name: tag)
     end
     link.save
-      redirect '/links'
+    redirect '/links'
   end
 
-  post '/bubbles' do
+  post '/tags' do
     @search_term = params[:search]
     tag = Tag.first(name: params[:search])
     @links = tag ? tag.links : []
-    erb :bubbles
+    erb :tags
   end
-
-
-
 end
