@@ -19,7 +19,6 @@ feature 'sign in ' do
 
   scenario 'signing up with wrong email address' do
     visit '/'
-    fill_in :email, with: 'fakeemail'
     fill_in :password, with:              'password123'
     fill_in :password_confirmation, with: 'password123'
     expect { click_button 'login' }.to change(User, :count).by(0)
